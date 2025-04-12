@@ -260,3 +260,29 @@ h1 {
     transform: translateY(0);
   }
 }
+
+.center {
+  text-align: center;
+}
+
+.error {
+  padding: 25px;
+
+  border-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: start;
+  justify-self: center;
+
+  background-color: #ff9696;
+  color: #661919;
+
+  width: 500px;
+}
+
+.error>p,
+.error>h2 {
+  margin: 0;
+}
