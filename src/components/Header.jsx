@@ -1,6 +1,7 @@
 import React from "react";
 
 import logoImg from "../assets/logo.jpg";
+import Button from "./UI/Button.jsx";
 
 export default function Header() {
   return (
@@ -12,7 +13,7 @@ export default function Header() {
         </div>
 
         <nav>
-          <button>Cart(0)</button>
+          <Button textOnly>Cart(0)</Button>
         </nav>
       </header>
     </>
