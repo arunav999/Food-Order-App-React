@@ -3,13 +3,19 @@ import React, { useContext } from "react";
 import logoImg from "../assets/logo.jpg";
 import Button from "./UI/Button.jsx";
 import CartContext from "../store/CartContext.jsx";
+import UserProgressContext from "../store/UserProgressContext.jsx";
 
 export default function Header() {
   const cartCtx = useContext(CartContext);
+  const userProgessCtx = useContext(UserProgressContext);
 
   const totalCartItems = cartCtx.items.reduce((totalNumberOfItems, item) => {
     return totalNumberOfItems + item.quantity;
   }, 0);
+
+  function handleShowCart() {
+    userProgessCtx.showCart();
+  }
 
   return (
     <>
@@ -20,7 +26,9 @@ export default function Header() {
         </div>
 
         <nav>
-          <Button textOnly>Cart ({totalCartItems})</Button>
+          <Button textOnly onClick={handleShowCart}>
+            Cart ({totalCartItems})
+          </Button>
         </nav>
       </header>
     </>
